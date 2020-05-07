@@ -1,0 +1,49 @@
+.section-hire-us {
+  background: #00ff6c;
+  color: white;
+  padding: 40px;
+
+  .button-hire-us {
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+    width: 10%;
+    margin: 10px auto;
+    position: relative;
+    border-radius: 2px;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid white;
+      z-index: 3;
+      border-radius: 5px;
+
+      &::before {
+        transform: scale(1);
+        cursor: pointer;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: white;
+      transform: scale(0);
+      transition: transform .3s ease-in-out;
+      border-radius: 2px;
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .section-hire-us {
+    .button-hire-us {
+      width: 100%;
+    }
+  }
+}

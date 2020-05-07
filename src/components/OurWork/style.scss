@@ -1,0 +1,17 @@
+.img-section {
+  overflow: hidden;
+  img {
+    transition: all .5s ease-in-out;
+    opacity: .8;
+
+    &:hover {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+}
+.our-work {
+  text-align: center;
+  font-weight: bold;
+  margin: 40px 0;
+}

@@ -1,0 +1,35 @@
+
+.contact-us-section {
+
+  .title-contact-us {
+    font-weight: bold;
+    font-size: 53px;
+    color: #00ff6c;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 50px auto;
+
+    i { 
+      height: 0;
+      float: left;
+      position: relative;
+      top: -32px;
+      left: 10px;
+      color: #999;
+    }
+    input {
+      padding-left: 32px;
+      margin-bottom: 5px;
+    }
+
+    textarea {
+      height: 200px;
+      margin-bottom: 5px
+    }
+  }
+}
