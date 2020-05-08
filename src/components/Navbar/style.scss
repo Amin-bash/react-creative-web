@@ -9,3 +9,11 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 430px) {
+  .background-transparent {
+    .navbar-brand {
+      width: 100px;
+    }
+  }
+}

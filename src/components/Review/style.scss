@@ -24,15 +24,21 @@
 }
 
 .closed {
-  right: -600px;
+  right: -100%;
 }
 .open {
   right: 0;
 }
 
-@media (max-width: 600px){
+@media (max-width: 991px){
   .side-bar-section {
     width: 100%;
     top: 240px;
+  }
+}
+
+@media (max-width: 430px) {
+  .side-bar-section {
+    top: 218px;
   }
 }
