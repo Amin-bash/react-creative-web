@@ -1,19 +1,26 @@
 .side-bar-section {
   position: absolute;
-    top: 80px;
-    color: black;
-    font-weight: 500;
-    padding: 30px;
-    width: 600px;
-    height: 100vh;
-    background: #f1f1f1;
-    transition: all .3s ease-in-out;
+  top: 80px;
+  color: black;
+  font-weight: 500;
+  padding: 30px;
+  width: 600px;
+  height: 100vh;
+  background: #f1f1f1;
+  transition: all .3s ease-in-out;
+  overflow: scroll;
 
-    ul {
-      li {
-        padding: 12px;
+  ul {
+    li {
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
+      padding: 12px;
     }
+  }
 }
 
 .closed {
@@ -21,4 +28,11 @@
 }
 .open {
   right: 0;
+}
+
+@media (max-width: 600px){
+  .side-bar-section {
+    width: 100%;
+    top: 240px;
+  }
 }

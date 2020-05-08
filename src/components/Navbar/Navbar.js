@@ -10,9 +10,8 @@ export const Navbar = () => {
 
 	const handleReview = () => {
 		setIsOpen(!isOpen);
-		console.log(isOpen);
-		
 	}
+	
 	return (
 		<nav className="navbar navbar-expand-lg background-transparent fixed-top navbar-light">
 			<div className="container">
