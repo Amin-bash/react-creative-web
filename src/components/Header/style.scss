@@ -14,7 +14,7 @@
   }
 
   img {
-    height: 100vh;
+    height: 100%;
   }
 
   .header-content {
@@ -81,9 +81,7 @@
 
 @media (max-width: 400px) {
   .header-section {
-    img {
-      height: 40vh;
-    }
+    
     .header-content {
       top: 55%;
 
