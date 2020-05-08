@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
+import { Loading } from '../Loading/Loading';
 
 export default class Review extends Component {
 	state = {
@@ -19,13 +20,14 @@ export default class Review extends Component {
 	};
 
 	handleSeePosts = (id) => {
+		if (this.state.postId === id) {
+			return;
+		}
+		this.setState({ postId: id, posts: [] });
 		fetch(`https://jsonplaceholder.typicode.com/posts/?userId=${id}`)
 			.then((response) => response.json())
 			.then((posts) => {
-				this.setState({
-					posts,
-					postId: id
-				});
+				this.setState({ posts });
 			});
 	};
 
@@ -33,28 +35,30 @@ export default class Review extends Component {
 		const { users, posts, postId } = this.state;
 		const { isOpen } = this.props;
 
-		const showPosts = () => {
-			if (posts) {
-				return posts.map((item) => {
-					return <li key={item.id}>{item.title}</li>;
-				});
-			} else {
-				return <div>Loading ...</div>;
-			}
-		};
 		return (
 			<div className={isOpen ? 'side-bar-section open' : 'side-bar-section closed'}>
 				<ul>
+					{users.length === 0 && <Loading />}
 					{users.map((item) => {
 						return (
 							<li key={item.id}>
-                <div>
-                  <span>{item.name}</span>
-                  <button className="btn btn-success" onClick={() => this.handleSeePosts(item.id)}>
-                    See Posts
-                  </button>
-                </div>
-								<ul>{postId === item.id && showPosts()}</ul>
+								<div>
+									<span>{item.name}</span>
+									<button className="btn btn-success" onClick={() => this.handleSeePosts(item.id)}>
+										See Posts
+									</button>
+								</div>
+								<ul>
+									{postId === item.id ? posts.length === 0 ? (
+										<Loading />
+									) : (
+										posts.map((item) => {
+											return <li key={item.id}>{item.title}</li>;
+										})
+									) : (
+										''
+									)}
+								</ul>
 							</li>
 						);
 					})}
